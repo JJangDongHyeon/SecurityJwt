@@ -1,0 +1,68 @@
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mariadb://localhost:3306/greengram2024_tdd_test
+    username: root
+    password: green502
+
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 30MB
+
+mybatis:
+  mapper-locations: mappers/**/*.xml
+
+springdoc:
+  api-docs:
+    version: openapi_3_1
+  swagger-ui:
+    path: /swagger
+    operations-sorter: method
+    default-model-expand-depth: 10
+    default-models-expand-depth: 10
+    display-request-duration: true
+  cache:
+    disabled: true
+
+file:
+  directory: D:\2024-01\download\greengram_tdd\
+
+#  custom 속성 지정
+app:
+  jwt:
+#    JWT 만들때 사용하는 열쇠(암호화) > 나중에 복호화 할 때도 사용
+    secret: DaeguGreenArtAcademyClass502RoomForJavaSpringBootFighting
+#    front-back 간 JWT 받는 헤더 키 이름( 서로 맞춰야 함)
+    header-schema-name: authorization
+#    이건 안써도 상관없는데 일반 적으로 이 토큰이 어떤 토큰인지 이름을 지정함 보통 개발자들이 Bearer라고함
+#    토큰의 종류: Bearer 는 JWT or OAuth2.0(소셜 로그인때 사용)를 의미
+    token-type: Bearer
+
+#    Access Token(ms) - 만료시간
+    access-token-expiry: 1_800_000
+
+#    Refresh Token(ms) - 15일 60 * 60 * 24 * 1000
+    refresh-token-expiry: 1_296_000_000
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:log4jdbc:mariadb://192.168.0.144:3306/db_odd_first_2
+    username: odd_first_2
+    password: channel
+  sql:
+    init:
+      mode: always
+
+file:
+  directory: /home/download
+
+
+
+
+
+
