@@ -24,7 +24,7 @@ public class UserControllerImpl {
     public ResultDto<Integer> signUpPostReq(@RequestPart MultipartFile pic, @RequestPart SignUpPostReq p){
         int result = service.signUpPostReq(pic, p);
         return ResultDto.<Integer>builder()
-                .resultMsg("회원가입 성공")
+                .resultMsg("회원가입 성고옹")
                 .resultData(result).build();
     }
 
