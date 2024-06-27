@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration//이 친구가 적힌 클래스 밑에는 @Bean이라는 어노테이션이 붙은 메소드가 무조건있음
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    //@Component로 빈등록을 하였기 때문에 DI가 된다.
+
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     /*
       메소드 빈 등록으로 주로 쓰는 케이스는 (현재 기준으로 설명하면) Security와 관련된
@@ -68,6 +68,7 @@ public class SecurityConfiguration {
                                         ,"/feed"
                                 //사진
                                         ,"/pic/**"
+                                        ,"/fimg/**"//프론트 스태틱 이미 저장 공간
                                 ).permitAll()
                                 //v3는 스웨거에서 쓰는 주소값 체계
                                 .anyRequest().authenticated()//로그인이 되어 있어야만 허용

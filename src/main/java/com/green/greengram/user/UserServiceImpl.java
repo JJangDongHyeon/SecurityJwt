@@ -78,6 +78,8 @@ public class UserServiceImpl implements UserService {
         String refreshToken = jwtTokenProvider.generateRefreshToken(myUser);
 
         //refreshToken은 보안 쿠키를 이용해서 처리
+
+
         int refreshTokenMaxAge = appProperties.getJwt().getRefreshTokenCookieMaxAge();
         cookieUtils.deleteCookie(res, "refresh-token");//혹시나 그 전에 있던 쿠키가 있을 숟 ㅗ있으니
         cookieUtils.setCookie(res, "refresh-token", refreshToken, refreshTokenMaxAge);

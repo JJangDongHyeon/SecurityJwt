@@ -32,7 +32,7 @@ file:
 app:
   jwt:
 #    JWT 만들때 사용하는 열쇠(암호화) > 나중에 복호화 할 때도 사용
-    secret: DaeguGreenArtAcademyClass502RoomForJavaSpringBootFighting
+    secret: DaeguGreenArtAcademyClass502RoomForJavaSpringBootFightingasdmaslkdfmskaldmflksadfmlkcgfhfhgftyfhtgfhtfhtgfhtfthgfhfth
 #    front-back 간 JWT 받는 헤더 키 이름( 서로 맞춰야 함)
     header-schema-name: authorization
 #    이건 안써도 상관없는데 일반 적으로 이 토큰이 어떤 토큰인지 이름을 지정함 보통 개발자들이 Bearer라고함
